@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Dynamic Tasklist</title>
+
+        <!-- stylin -->
+        <style>
+            body { 
+                line-height: 1.88889;
+                color: #BCBCBC; 
+                background: #EEEEEE;
+                margin: 30px; 
+                padding: 0;
+            }
+
+            p { 
+                margin-top: 0; 
+                text-align: center;
+                font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+            }
+
+            #highPriority {
+                color: #81261C; 
+                background-color: #FBA299;
+                margin: 10px;
+            }
+
+            #midPriority {
+                color: #EB650E;
+                background-color: #FBCB99;
+                margin: 10px;
+                margin-top: 15px;
+                margin-bottom: 15px; 
+            }
+
+            #lowPriority {
+                color: #000000;
+                background-color: #DFCECC;
+                margin: 10px;
+            }
+
+            #form {
+                width: 40%;
+                background-color: #6A7C98;
+                color: #FFFFFF;
+                margin: auto;
+                padding: 20px;
+                -webkit-border-radius: 15;
+                -moz-border-radius: 15;
+                border-radius: 15px;
+            }
+
+            #add {
+                background: #3498db;
+                background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+                background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+                background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+                background-image: -o-linear-gradient(top, #3498db, #2980b9);
+                background-image: linear-gradient(to bottom, #3498db, #2980b9);
+                -webkit-border-radius: 28;
+                -moz-border-radius: 28;
+                border-radius: 28px;
+                font-family: Arial;
+                color: #ffffff;
+                text-decoration: none;
+                font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+            }
+
+            #add:hover {
+                background: #3cb0fd;
+                background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+                text-decoration: none;
+            }
+        </style>
+
+    </head>
+
+
+    <body>
+
+        <!-- tasklist form -->
+        <div id="form">
+            <form action="#" id="addForm">
+                <p>
+                    <!-- input box -->
+                    <input type="text" id="taskInput"></input>
+                    <input type="submit" id="add" value="Add Task"></input>
+                </p>
+                <p>
+                    <!-- select priorities -->
+                    <input type="radio" name="priority" value="high">High Priority<br>
+                    <input type="radio" name="priority" value="mid">Mid Priority<br>
+                    <input type="radio" name="priority" value="low">Low Priority<br>
+                </p>
+            </form>
+
+            <!-- begin list of tasks -->
+
+            <!-- high priority -->
+            <div id="highPriority">
+            </div>
+
+            <!-- mid priority -->
+            <div id="midPriority">
+            </div>
+
+            <!-- low priority -->
+            <div id="lowPriority">
+            </div>
+        </div>
+
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            var socket = io();
+
+            var high = [];
+            var mid = [];
+            var low = [];
+
+            var count = 0;
+
+            function Task(task, priority, id)
+            {
+                this.task = task;
+                this.priority = priority;
+                this.ID = "task" + count;
+                this.HTML = $("<p id='" + this.ID + "'> [x] " + this.task + "</p>");
+            }
+
+            var highPriorityDiv = $("#highPriority");
+            var midPriorityDiv = $("#midPriority");
+            var lowPriorityDiv = $("#lowPriority");
+
+            $("#addForm").submit(function()
+            {
+                var taskToAdd = $("#taskInput").val();
+                var priority = $("input[name=priority]:checked").val();
+                socket.emit('newTask', {task: taskToAdd, p: priority});
+                return false;
+            }); 
+
+            socket.on('newTask', function(data)
+            {
+                if(data.p === "high")
+                {
+                    high[high.length] = new Task(data.task, data.p, count);
+                    highPriorityDiv.html("");
+                    high.forEach(function(task)
+                    {
+                        highPriorityDiv.append(task.HTML);
+
+                        $("#" + task.ID).on("click", function()
+                        {
+                            $(this).html("");
+                        });
+
+                    });
+
+                }
+                else if(data.p === "mid")
+                {
+                    mid[mid.length] = new Task(data.task, data.p, count);
+                    midPriorityDiv.html("");
+                    mid.forEach(function(task)
+                    {
+                        midPriorityDiv.append(task.HTML);
+
+                        $("#" + task.ID).on("click", function()
+                        {
+                            $(this).html("");
+                        });
+                    });
+                }
+                else if(data.p === "low")
+                {
+                    low[low.length] = new Task(data.task, data.p, count);
+                    lowPriorityDiv.html("");
+                    low.forEach(function(task)
+                    {
+                        lowPriorityDiv.append(task.HTML);
+
+                        $("#" + task.ID).on("click", function()
+                        {
+                            $(this).html("");
+                        });
+                    });
+                }   
+                else
+                {
+                    alert("Select a priority!");
+                }
+
+                count++;
+            });    
+        </script>
+
+    </body>
+
+
+</html>
