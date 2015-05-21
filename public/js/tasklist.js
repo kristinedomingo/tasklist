@@ -13,15 +13,15 @@ $(document).ready (function ()
   $("#add").on ("click", function ()
   {
     // Get the task to add. If empty, prompt user.
-    var taskToAdd = $("#taskInput").val();
-    if (taskToAdd.lenth === 0)
+    var taskToAdd = $("#taskInput").val ();
+    if (taskToAdd.length === 0)
     {
       alert ("Please enter in a task!");
       return false;
     }
 
     // Get the priority selected. If none selected, prompt user.
-    var priority = $("input[name=priority]:checked").val();
+    var priority = $("input[name=priority]:checked").val ();
     if (priority === "high") taskList = highPriorityDiv;
     else if (priority === "mid") taskList = midPriorityDiv;
     else if (priority === "low") taskList = lowPriorityDiv;
@@ -38,7 +38,7 @@ $(document).ready (function ()
     // Handler for task deletion.
     task.on ("click", function ()
     {
-      $(this).remove();
+      $(this).remove ();
     });
 
     count++;
