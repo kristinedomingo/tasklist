@@ -26,9 +26,10 @@
     <div id="form">
 
       <form action="#" class="pure-form pure-form-aligned" id="addForm">
-        
+
         <p>
-          <input type="text" id="taskInput" placeholder="Enter task here.">
+          <input type="text" id="taskInput" placeholder="Enter task here."
+          maxlength="42">
           <button type="submit" class="pure-button pure-button-primary" id="add">
             Add Task
           </button>
@@ -54,10 +55,12 @@
 
       </form>
 
+      <p></p>
+
       <!-- list of tasks -->
-      <div id="highPriority"></div>
-      <div id="midPriority"></div>
-      <div id="lowPriority"></div>
+      <div class="taskLists" id="highPriority"></div><br />
+      <div class="taskLists" id="midPriority"></div><br />
+      <div class="taskLists" id="lowPriority"></div><br />
 
     </div>
   </body>

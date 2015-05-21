@@ -2,6 +2,13 @@
   text-align: center;
   color: #777;
   font-family: sans-serif;
+  margin: 2%;
+}
+
+#addForm {
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 #highPriority {
@@ -9,14 +16,14 @@
 }
 
 #midPriority {
-  color: #F5A345;
+  color: #E97A17;
 }
 
 #lowPriority {
-  color: #000000;
+  color: #4E9637;
 }
 
-#highPriority div, #midPriority div, #lowPriority div {
+.taskLists div {
   display: table;
   margin: auto;
 }
@@ -24,4 +31,12 @@
 .priorityOptions {
   text-align: left;
   display: inline-block;
+}
+
+.taskLists {
+  line-height: 2.0;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
 }
