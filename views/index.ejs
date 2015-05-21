@@ -22,46 +22,44 @@
 
 
   <body>
-  <!-- begin tasklist form -->
-  <div id="form">
-    <form action="#" class="pure-form pure-form-aligned" id="addForm">
-      <!-- input box -->
-      <p>
-        <input type="text" id="taskInput" placeholder="Enter task here.">
-        <button type="submit" class="pure-button pure-button-primary" id="add">
-          Add Task
-        </button>
-      </p>
+    <!-- begin tasklist form -->
+    <div id="form">
 
-      <p>
-        <!-- select priorities -->
-        <label for="highRadio" class="pure-radio">
-        <input id ="highRadio" type="radio" name="priority" value="high"/>
-        High Priority
-        </label>
+      <form action="#" class="pure-form pure-form-aligned" id="addForm">
+        
+        <p>
+          <input type="text" id="taskInput" placeholder="Enter task here.">
+          <button type="submit" class="pure-button pure-button-primary" id="add">
+            Add Task
+          </button>
+        </p>
 
-        <label for="midRadio" class="pure-radio">
-        <input id ="midRadio" type="radio" name="priority" value="mid"/>
-        Mid Priority
-        </label>
+        <div class="priorityOptions">
+          <!-- select priorities -->
+          <label for="highRadio" class="pure-radio">
+          <input id ="highRadio" type="radio" name="priority" value="high"/>
+            High Priority
+          </label>
 
-        <label for="lowRadio" class="pure-radio">
-        <input id ="lowRadio" type="radio" name="priority" value="low"/>
-        Low Priority
-        </label>
-      </p>
-    </form>
+          <label for="midRadio" class="pure-radio">
+          <input id ="midRadio" type="radio" name="priority" value="mid"/>
+            Mid Priority
+          </label>
 
-    <!-- list of tasks -->
-    <div id="highPriority">
+          <label for="lowRadio" class="pure-radio">
+          <input id ="lowRadio" type="radio" name="priority" value="low"/>
+            Low Priority
+          </label>
+        </div>
+
+      </form>
+
+      <!-- list of tasks -->
+      <div id="highPriority"></div>
+      <div id="midPriority"></div>
+      <div id="lowPriority"></div>
+
     </div>
-
-    <div id="midPriority">
-    </div>
-
-    <div id="lowPriority">
-    </div>
-  </div>
   </body>
 
 </html>

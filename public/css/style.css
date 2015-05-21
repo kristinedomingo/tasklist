@@ -1,5 +1,7 @@
-#addForm {
+#form {
   text-align: center;
+  color: #777;
+  font-family: sans-serif;
 }
 
 #highPriority {
@@ -17,4 +19,9 @@
 #highPriority div, #midPriority div, #lowPriority div {
   display: table;
   margin: auto;
+}
+
+.priorityOptions {
+  text-align: left;
+  display: inline-block;
 }
