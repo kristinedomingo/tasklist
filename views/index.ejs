@@ -3,6 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tasklist</title>
 
     <!-- JQuery -->
@@ -12,43 +13,55 @@
     <!-- tasklist javascript -->
     <script src="/js/tasklist.js"></script>
 
+    <!-- Pure.css -->
+    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
     <!-- stylin -->
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
 
 
   <body>
-    <!-- begin tasklist form -->
-    <div id="form">
-      <form action="#" id="addForm">
-        <p>
-          <!-- input box -->
-          <input type="text" id="taskInput">
-          <input type="submit" id="add" value="Add Task">
-        </p>
-        <p>
-          <!-- select priorities -->
-          <input id ="highRadio" type="radio" name="priority" value="high" />
-            <label for="highRadio">High Priority</label><br>
+  <!-- begin tasklist form -->
+  <div id="form">
+    <form action="#" class="pure-form pure-form-aligned" id="addForm">
+      <!-- input box -->
+      <p>
+        <input type="text" id="taskInput" placeholder="Enter task here.">
+        <button type="submit" class="pure-button pure-button-primary" id="add">
+          Add Task
+        </button>
+      </p>
 
-          <input id ="midRadio" type="radio" name="priority" value="mid" />
-            <label for="midRadio">Mid Priority</label><br>
+      <p>
+        <!-- select priorities -->
+        <label for="highRadio" class="pure-radio">
+        <input id ="highRadio" type="radio" name="priority" value="high"/>
+        High Priority
+        </label>
 
-          <input id ="lowRadio" type="radio" name="priority" value="low" />
-            <label for="lowRadio">Low Priority</label><br>
-        </p>
-      </form>
+        <label for="midRadio" class="pure-radio">
+        <input id ="midRadio" type="radio" name="priority" value="mid"/>
+        Mid Priority
+        </label>
 
-      <!-- list of tasks -->
-      <div id="highPriority">
-      </div>
+        <label for="lowRadio" class="pure-radio">
+        <input id ="lowRadio" type="radio" name="priority" value="low"/>
+        Low Priority
+        </label>
+      </p>
+    </form>
 
-      <div id="midPriority">
-      </div>
-
-      <div id="lowPriority">
-      </div>
+    <!-- list of tasks -->
+    <div id="highPriority">
     </div>
+
+    <div id="midPriority">
+    </div>
+
+    <div id="lowPriority">
+    </div>
+  </div>
   </body>
 
 </html>

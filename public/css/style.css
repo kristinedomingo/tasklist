@@ -1,14 +1,4 @@
-body { 
-  font: 125% georgia, sans-serif;
-  line-height: 1.88889;
-  color: #555753; 
-  background: #FFF;
-  margin: 30px; 
-  padding: 0;
-}
-
-p { 
-  margin-top: 0; 
+#addForm {
   text-align: center;
 }
 
