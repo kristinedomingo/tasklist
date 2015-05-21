@@ -4,4 +4,4 @@ For CS 109 - Computer Programming: Javscript, homework 6, "Real-time Client-Serv
 
 Deployed on Heroku at [kristine-tasklist.heroku.com].
 
-[kristine-tasklist.heroku.com]:kristine-tasklist.heroku.com
+[kristine-tasklist.heroku.com]:http://kristine-tasklist.heroku.com/
