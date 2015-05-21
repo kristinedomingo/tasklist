@@ -1,6 +1,7 @@
+// ID for tasks, so each one is unique.
 var count = 0;
 
-$(document).ready(function()
+$(document).ready (function ()
 {
   var taskList;
   var task;
@@ -8,33 +9,34 @@ $(document).ready(function()
   var midPriorityDiv = $("#midPriority");
   var lowPriorityDiv = $("#lowPriority");
 
-  $("#add").on("click", function()
+  // Begin handler for clicking "add"
+  $("#add").on ("click", function ()
   {
-    var taskToAdd = $("#taskInput").val();      
-    var priority = $("input[name=priority]:checked").val();
-
-    if(priority === "high")
+    // Get the task to add. If empty, prompt user.
+    var taskToAdd = $("#taskInput").val();
+    if (taskToAdd.lenth === 0)
     {
-      taskList = highPriorityDiv;
-    }
-    else if(priority === "mid")
-    {
-      taskList = midPriorityDiv
-    }
-    else if(priority === "low")
-    {
-      taskList = lowPriorityDiv;
-    }   
-    else
-    {
-      alert("Select a priority!");
+      alert ("Please enter in a task!");
       return false;
     }
 
-    taskList.append('<div id="task' + count + '">[X] ' + taskToAdd + '</div>');
+    // Get the priority selected. If none selected, prompt user.
+    var priority = $("input[name=priority]:checked").val();
+    if (priority === "high") taskList = highPriorityDiv;
+    else if (priority === "mid") taskList = midPriorityDiv;
+    else if (priority === "low") taskList = lowPriorityDiv;
+    else
+    {
+      alert ("Select a priority!");
+      return false;
+    }
+
+    // Add the task to the list.
+    taskList.append ('<div id="task' + count + '">[X] ' + taskToAdd + '</div>');
     task = $("#task" + count);
 
-    task.on("click", function()
+    // Handler for task deletion.
+    task.on ("click", function ()
     {
       $(this).remove();
     });
