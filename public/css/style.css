@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300);
 
-#form {
+#form, #connectionsDisplay {
   text-align: center;
   color: #777;
-  font-family: sans-serif;
+  font-family: "Raleway", Helvetica, sans-serif;
   margin: 2%;
 }
 

@@ -56,4 +56,10 @@ $(document).ready (function ()
 
     count++;
   });
+
+  socket.on ("connectionChange", function (data)
+  {
+    var connectionsDisplay = $("#connectionsDisplay").html(
+      "Number of users connected: " + data);
+  });
 });
