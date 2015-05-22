@@ -1,5 +1,7 @@
 var express = require ('express');
 var app = express ();
+var http = require('http').Server (app);
+var io = require ('socket.io')(http);
 
 app.set('port', (process.env.PORT || 5000));
 app.set ('views', __dirname + '/views');
@@ -10,4 +12,12 @@ app.get ('/', function (req, res)
   res.render ('index.ejs');
 });
 
-app.listen (app.get ('port'));
+io.on ('connection', function (socket)
+{
+  socket.on ('addTaskClick', function (data)
+  {
+    io.emit ('addTaskConfirm', data);
+  });
+});
+
+http.listen (app.get ('port'));
