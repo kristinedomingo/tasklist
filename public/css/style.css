@@ -4,7 +4,19 @@ body {
   font-size: 120%;
 }
 
-div, #form, #connectionsDisplay {
+#highPriority {
+  color: #F55945;
+}
+
+#midPriority {
+  color: #E97A17;
+}
+
+#lowPriority {
+  color: #4E9637;
+}
+
+#sourceDisplay, #form, #connectionsDisplay {
   text-align: center;
   color: #777;
   font-family: "Raleway", Helvetica, sans-serif;
@@ -16,18 +28,6 @@ div, #form, #connectionsDisplay {
   padding: 10px;
   border-radius: 10px;
   display: inline-block;
-}
-
-#highPriority {
-  color: #F55945;
-}
-
-#midPriority {
-  color: #E97A17;
-}
-
-#lowPriority {
-  color: #4E9637;
 }
 
 .taskLists div {
