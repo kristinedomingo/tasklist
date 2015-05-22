@@ -8,6 +8,7 @@ Deployed on Heroku at [kristine-tasklist.heroku.com].
 
 ### This application uses:
 * [Socket.io]
+* [Express]
 * [jQuery]
 * [Node.js]
 * [PureCSS]
@@ -17,3 +18,4 @@ Deployed on Heroku at [kristine-tasklist.heroku.com].
 [PureCSS]: http://purecss.io/
 [jQuery]: https://jquery.com/
 [Node.js]: https://nodejs.org/
+[Express]: http://expressjs.com/
