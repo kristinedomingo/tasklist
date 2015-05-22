@@ -1,7 +1,7 @@
 // ID for tasks, so each one is unique.
 var count = 0;
 
-// websocket
+// Websocket.
 var socket = io ();
 
 $(document).ready (function ()
@@ -57,6 +57,7 @@ $(document).ready (function ()
     count++;
   });
 
+  // Update display of users connected.
   socket.on ("connectionChange", function (data)
   {
     var connectionsDisplay = $("#connectionsDisplay").html(

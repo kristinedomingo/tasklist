@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Tasklist</title>
 
     <!-- JQuery -->
@@ -19,17 +20,18 @@
     <!-- Pure.css -->
     <link rel="stylesheet" href="/css/pure-min.css">
 
-    <!-- stylin -->
+    <!-- Other style not handled by pure -->
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
 
 
   <body>
-    <!-- begin tasklist form -->
+    <!-- Begin tasklist form. -->
     <div id="form">
 
       <form action="#" class="pure-form pure-form-aligned" id="addForm">
 
+        <!-- Input and addition of task. -->
         <p>
           <input type="text" id="taskInput" placeholder="Enter task here."
           maxlength="42">
@@ -38,8 +40,8 @@
           </button>
         </p>
 
+        <!-- Radio buttons for selecting priority. -->
         <div class="priorityOptions">
-          <!-- select priorities -->
           <label for="highRadio" class="pure-radio">
           <input id ="highRadio" type="radio" name="priority" value="high"/>
             High Priority
@@ -60,13 +62,14 @@
 
       <p></p>
 
-      <!-- list of tasks -->
+      <!-- list of tasks. -->
       <div class="taskLists" id="highPriority"></div><br />
       <div class="taskLists" id="midPriority"></div><br />
       <div class="taskLists" id="lowPriority"></div><br />
 
     </div>
 
+    <!-- Display the number of users connected. -->
     <div id="connectionsDisplay">
       Number of users connected:
     </div>
