@@ -2,7 +2,7 @@
 
 For "CS 109 - Computer Programming: Javscript", homework 6: "Real-time Client-Server Communication". 
 
-This application is a real-time task list that multiple users can use at once to keep track of items that need to be completed. Try opening the link below in multiple windows and see for yourself!
+This application is a real-time task list that multiple users can use at once to keep track of items that need to be completed - try opening the link below in multiple windows.
 
 Deployed on Heroku at [kristine-tasklist.heroku.com].
 
