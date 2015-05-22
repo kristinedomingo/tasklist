@@ -12,7 +12,7 @@ Deployed on Heroku at [kristine-tasklist.heroku.com].
 * [Node.js]
 * [Pure.css]
 
-[kristine-tasklist.heroku.com]:kristine-tasklist.heroku.com
+[kristine-tasklist.heroku.com]:http://kristine-tasklist.heroku.com
 [socket.io]:http://socket.io
 [Pure.css]: http://purecss.io/
 [jQuery]: https://jquery.com/
