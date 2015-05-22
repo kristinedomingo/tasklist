@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+
 #form {
   text-align: center;
   color: #777;
@@ -6,6 +8,7 @@
 }
 
 #addForm {
+  font-family: "Raleway", Helvetica, sans-serif;
   padding: 10px;
   border-radius: 10px;
   display: inline-block;
@@ -34,6 +37,7 @@
 }
 
 .taskLists {
+  font-family: "Raleway", Helvetica, sans-serif;
   line-height: 2.0;
   display: inline-block;
   padding: 10px;
