@@ -1,6 +1,6 @@
-# Dynamic Tasklist
+# Real-time Communicated Tasklist
 
-For "CS 109 - Computer Programming: Javscript", homework 6: "Real-time Client-Server Communication". 
+For "CS 109 - Computer Programming: Javscript", homework 6: "Real-time Client-Server Communication". The purpose of this assignment was to learn how to handle client and server communication through WebSocket technology.
 
 This Node.js application is a real-time task list that multiple users can use at once to keep track of items that need to be completed - try opening the link below in multiple windows.
 

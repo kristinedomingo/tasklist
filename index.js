@@ -4,10 +4,10 @@ var app = express ();
 var http = require('http').Server (app);
 var io = require ('socket.io')(http);
 
-// Keep track of the number of uses connected to the application.
+// Keep track of the number of users connected to the application.
 var numConnections = 0;
 
-// Set to port 500.
+// Set to port 5000.
 app.set('port', (process.env.PORT || 5000));
 
 // Set directories for routing.
@@ -32,7 +32,7 @@ io.on ('connection', function (socket)
     io.emit ('connectionChange', numConnections);
   });
 
-  // Confirm addition of task upon request to do so.
+  // Emit addition of a task to ALL users upon one request to do so.
   socket.on ('addTaskClick', function (data)
   {
     io.emit ('addTaskConfirm', data);
